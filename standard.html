@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+<!-- GitHub Pages Hosted CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/YOUR-GITHUB-USERNAME/reusesystems-ebay-templates@main/css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/YOUR-GITHUB-USERNAME/reusesystems-ebay-templates@main/css/responsive.css">
+<title>{{ title }}</title>
+</head>
+<body>
+<div class="main">
+<!-- Header Section -->
+<div class="header">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="logo">
+<img src="https://cdn.jsdelivr.net/gh/YOUR-GITHUB-USERNAME/reusesystems-ebay-templates@main/images/logo.jpg" alt="RE-USE.SYSTEMS Logo">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Navigation Menu -->
+<div class="menu-bg">
+<input type="checkbox" id="toggle-nav">
+<label for="toggle-nav">Menu</label>
+<div class="menu">
+<ul>
+<li><a href="https://www.ebay.co.uk/str/reusesystems" target="_blank" rel="noopener">Visit Store</a></li>
+<li><a href="https://www.ebay.co.uk/str/reusesystems#tab1" target="_blank" rel="noopener">About Us</a></li>
+<li><a href="https://www.ebay.co.uk/str/reusesystems?_sop=10" target="_blank" rel="noopener">New Arrivals</a></li>
+<li><a href="https://www.ebay.co.uk/cnt/IntermediatedFAQ?ReturnUserEmail=&requested=re-use.systems&_caprdt=1" target="_blank" rel="noopener">Contact Us</a></li>
+<li><a href="https://www.ebay.co.uk/fdbk/feedback_profile/re-use.systems" target="_blank" rel="noopener">Feedback</a></li>
+</ul>
+</div>
+</div>
+
+<!-- Service Features Bar -->
+<div class="container-fluid service">
+<div class="container">
+<div class="row">
+<div class="col-sm-4 service-box">
+<i class="fa fa-check-square-o"></i>
+<span>Free UK Shipping</span>on the same working day
+</div>   
+<div class="col-sm-4 service-box">
+<i class="fa fa-calendar-o"></i>
+<span>30 day Hassle-Free</span>Returns Policy
+</div>   
+<div class="col-sm-4 service-box">
+<i class="fa fa-recycle"></i>
+<span>Professionally </span>Recycled Products
+</div>    
+</div>
+</div>
+</div>
+
+<!-- Main Content Area -->
+<div class="middle">
+<div class="container">
+<div class="middle-section">
+<div class="row">
+<div class="col-md-12 col-lg-12">
+
+<!-- Product Title -->
+<div class="title">
+<h4>{{ title }}</h4>
+</div>
+
+<!-- Product Gallery -->
+<div class="right-side">
+<div class="gallery">
+<div class="product-image-box">
+<!-- Radio buttons for image switching -->
+<input type="radio" checked="" name="gal" id="gal1">
+<input type="radio" name="gal" id="gal2">
+<input type="radio" name="gal" id="gal3">
+<input type="radio" name="gal" id="gal4">
+<input type="radio" name="gal" id="gal5">
+<input type="radio" name="gal" id="gal6">
+<input type="radio" name="gal" id="gal7">
+<input type="radio" name="gal" id="gal8">
+<input type="radio" name="gal" id="gal9">
+<input type="radio" name="gal" id="gal10">
+<input type="radio" name="gal" id="gal11">
+<input type="radio" name="gal" id="gal12">
+
+<!-- Main Image Display -->
+{% for image in images[:12] %}
+<div id="content{{ loop.index }}" class="product-image-container">
+<img src="{{ image.url }}" alt="{{ title }} - Image {{ loop.index }}">
+</div>
+{% endfor %}
+
+<!-- Thumbnail Navigation -->
+<div class="product-more-views">
+<ul>
+{% for image in images[:12] %}
+<tagbot>
+<li class="x-hold x-hide">
+<label for="gal{{ loop.index }}" id="lg{{ loop.index }}">
+<img src="{{ image.url }}" alt="Thumbnail {{ loop.index }}">
+</label>
+</li>
+</tagbot>
+{% endfor %}
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Product Description -->
+<div class="description">
+<div class="description-heading">
+<h4>Item Description</h4>
+</div>
+<div class="description-details pd">
+<p><strong>{{ title }}</strong></p>
+<p>{{ description }}</p>
+<br>
+<p><strong>We will use recycled packaging when possible</strong></p>
+<br>
+<p>If it's not in the photos, it's NOT included! This includes AC Adapters, Software, Cables or anything you may assume would be included. So make sure you have a good look at the item photos to see what you are getting!</p>
+</div>
+</div>
+
+<!-- Tabbed Information Section -->
+<div class="tab-section">
+<div class="tabs">
+<input id="tab1" type="radio" name="tabs" checked>
+<label for="tab1">About Us</label>
+<input id="tab2" type="radio" name="tabs">
+<label for="tab2">Shipping Policy</label>
+<input id="tab3" type="radio" name="tabs">
+<label for="tab3">Return Policy</label>
+
+<div class="content">
+<!-- About Us Tab -->
+<div id="content1">
+<p>At Re-Use.Systems, we believe that IT and electronics products have a long lifespan and can serve many purposes. That is why we are committed to returning as much IT and electronics back into use as possible. We do this by repairing, refurbishing, reselling, donating or recycling these products in an environmentally friendly way. Our aim is to reduce e-waste, save resources and create value for our customers and society.</p>
+</div>
+
+<!-- Shipping Policy Tab -->
+<div id="content2">
+<p>When selecting the delivery method, orders of in-stock items will be shipped out either the same day or the next business day depending on the cut-off time listed below.</p>
+<p><br><strong>*Please note:</strong></p>
+<ul>
+<li>Order cut-off time is UK: 15:00 Monday to Friday. Saturday 11:00. Excluding Bank Holidays. We aim to deliver within 3 working days when orders are placed by these times, but this cannot be guaranteed</li>
+<li>Ordered before this time will ship out the same day the order is placed.</li>
+</ul>
+<p>For buyers purchasing outside of the UK will be shipped by eBay global shipping program</p>
+<p>We take great care packaging every item to ensure safe shipment to you. Once your order has been processed and we have received cleared payment, The item will be dispatched within 1 working day Saturday orders by 11 am dispatched the same day. Submit an order before the cut-off time to shorten your delivery time</p>
+</div>
+
+<!-- Return Policy Tab -->
+<div id="content3">
+<p>You have 30 days from the date of purchase to return your order for a refund. You must erase any personal data from your device before returning it. You must also ensure that the item is in the same condition as when you received it. If the item is damaged during the return process, we may reduce the amount of refund or compensation accordingly.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer Section -->
+<div class="footer">
+<div class="container">
+<div class="footer-bg">
+<div class="row">
+<div class="col-md-6">
+<div class="footer-box">
+<div class="footer-head">
+<h4>Useful Links</h4>
+</div>
+<div class="footer-detail">
+<ul>
+<li><a href="https://www.ebay.co.uk/str/reusesystems" target="_blank" rel="noopener">Visit Store</a></li>
+<li><a href="https://www.ebay.co.uk/str/reusesystems#tab1" target="_blank" rel="noopener">About Us</a></li>
+<li><a href="https://www.ebay.co.uk/cnt/IntermediatedFAQ?ReturnUserEmail=&requested=re-use.systems&_caprdt=1" target="_blank" rel="noopener">Contact Us</a></li>
+<li><a href="https://www.ebay.co.uk/fdbk/feedback_profile/re-use.systems" target="_blank" rel="noopener" style="border: 0px">Feedback</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="footer-box">
+<div class="footer-head">
+<h4>Newsletter</h4>
+</div>
+<div class="footer-detail">
+<p>Sign up to our newsletter to receive details of new offers and promotions.</p><br>
+<div class="f-buy-now">
+<a href="https://www.ebay.co.uk/mye/myebay/watchlist" target="_blank" rel="noopener">
+<i class="fas fa-envelope"></i> Subscribe to Newsletter
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Copyright -->
+<div class="copyright">
+Copyright <strong>Re-Use.Systems</strong> All Rights Reserved.
+</div>
+
+</div>
+</body>
+</html>
